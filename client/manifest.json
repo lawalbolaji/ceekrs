@@ -1,13 +1,36 @@
 {
-    "manifest_version": 3,
-    "name": "Video Search",
-    "description": "Perform Search in Videos",
-    "version": "0.0.1",
+  "manifest_version": 3,
+  "name": "Video Search",
+  "description": "Perform Search in Videos",
+  "version": "0.0.1",
 
-    "action": {
-      "default_popup": "popup/popup.html",
-      "default_icon": "images/search-icon.png"
-    },
+  "action": {
+    "default_icon": "icons/search-icon.png"
+  },
 
-    "permissions": []
-  }
+  "background": {
+    "service_worker": "service-workers/service-worker.js"
+  },
+
+  "web_accessible_resources": [{
+    "matches": ["*://*.youtube.com/*"],
+    "resources": [ "iframe.html"]
+  }],
+
+
+  "content_scripts": [
+    { 
+      "matches": [
+        "*://*.youtube.com/*"
+      ], 
+      "css":[],
+      "js": [
+        "content-scripts/utilities.js",
+        "content-scripts/component.js",
+        "content-scripts/search-components.js",
+        "content-scripts/main.js"
+      ]
+      
+    }
+  ]
+}
