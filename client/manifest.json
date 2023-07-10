@@ -1,36 +1,51 @@
 {
   "manifest_version": 3,
-  "name": "Video Search",
-  "description": "Perform Search in Videos",
-  "version": "0.0.1",
+  "name": "Ceekrs",
+  "description": "Search for a topic, term, name of a person, phrase or any spoken word in a video and naviaget to the exact point in the video",
+  "version": "0.1.0",
+  "author": {
+    "email": "hi@ceekrs.com"
+  },
+
+  "icons": {
+    "16": "assets/icons/search16.png",
+    "32": "assets/icons/search32.png",
+    "48": "assets/icons/search48.png",
+    "128": "assets/icons/search128.png"
+  },
 
   "action": {
-    "default_icon": "icons/search-icon.png"
+    "default_icon": {
+      "16": "assets/icons/search16.png",
+      "32": "assets/icons/search32.png",
+      "48": "assets/icons/search48.png",
+      "128": "assets/icons/search128.png"
+    }
   },
 
   "background": {
-    "service_worker": "service-workers/service-worker.js"
+    "service_worker": "chrome.service.worker.js"
   },
 
-  "web_accessible_resources": [{
-    "matches": ["*://*.youtube.com/*"],
-    "resources": [ "iframe.html"]
-  }],
-
-
   "content_scripts": [
-    { 
-      "matches": [
-        "*://*.youtube.com/*"
-      ], 
-      "css":[],
-      "js": [
-        "content-scripts/utilities.js",
-        "content-scripts/component.js",
-        "content-scripts/search-components.js",
-        "content-scripts/main.js"
-      ]
-      
+    {
+      "matches": ["https://*.youtube.com/watch*"],
+      "js": ["content_scripts/main.js"]
     }
-  ]
+  ],
+
+  "permissions": ["activeTab", "scripting"],
+  "optional_permissions": [],
+  "host_permissions": [
+    "https://b3703f7e-38c3-4bf1-b6d8-ad50e77a755f.mock.pstmn.io/*"
+  ],
+
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "Command+Shift+F"
+      }
+    }
+  }
 }
