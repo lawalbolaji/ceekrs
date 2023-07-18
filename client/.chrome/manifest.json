@@ -4,22 +4,23 @@
   "description": "Search for a topic, term, name of a person, phrase or any spoken word in a video and naviaget to the exact point in the video",
   "version": "0.1.0",
   "author": {
-    "email": "hi@ceekrs.com"
+    "email": "hi@ceekrs.com",
+    "name": "ceekrs inc."
   },
 
   "icons": {
-    "16": "assets/icons/search16.png",
-    "32": "assets/icons/search32.png",
-    "48": "assets/icons/search48.png",
-    "128": "assets/icons/search128.png"
+    "16": "action/16x16.png",
+    "32": "action/32x32.png",
+    "48": "action/48x48.png",
+    "128": "action/128x128.png"
   },
 
   "action": {
     "default_icon": {
-      "16": "assets/icons/search16.png",
-      "32": "assets/icons/search32.png",
-      "48": "assets/icons/search48.png",
-      "128": "assets/icons/search128.png"
+      "16": "action/16x16.png",
+      "32": "action/32x32.png",
+      "48": "action/48x48.png",
+      "128": "action/128x128.png"
     }
   },
 
@@ -30,7 +31,9 @@
   "content_scripts": [
     {
       "matches": ["https://*.youtube.com/watch*"],
-      "js": ["content_scripts/main.js"]
+      "js": ["index.js"],
+      "css": ["styles/index.css"],
+      "run_at": "document_end"
     }
   ],
 
@@ -43,9 +46,16 @@
   "commands": {
     "_execute_action": {
       "suggested_key": {
-        "default": "Ctrl+Shift+F",
-        "mac": "Command+Shift+F"
-      }
+        "default": "Ctrl+Shift+0",
+        "mac": "Command+Shift+0"
+      },
+      "description": "toggles search box open state"
     }
-  }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/*"],
+      "matches": ["*://*/*"]
+    }
+  ]
 }
