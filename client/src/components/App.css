@@ -71,3 +71,26 @@
   padding: 3%;
   box-sizing: border-box;
 }
+
+.ceekrs-search-results {
+  font-size: 1.5rem;
+  line-height: 3rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  margin-top: 2%;
+}
+
+/* todo: will revisit some of this styling for more explicit declarations once we have a design */
+.ceekrs-search-results div {
+  cursor: pointer;
+  border-top: 1px solid inherit;
+}
+
+.ceekrs-search-results div:hover {
+  background-color: #7e92b9;
+}
+
+#ceekrs-timestamp {
+  font-weight: bold;
+}
