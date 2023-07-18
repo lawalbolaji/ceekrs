@@ -34,25 +34,25 @@ export function SearchFrame({ tearDownRoot }) {
         <p>You can only search in english for now</p>
       </div>
       <div>
-        <ResultsComponent results={searchResults} />
+        <ResultsComponent results={searchResults.slice(0, 5)} tearDownRoot={tearDownRoot} />
       </div>
     </div>
   );
 }
 
-function ResultsComponent(props) {
+function ResultsComponent({ results, tearDownRoot }) {
   return (
-    <div>
-      {props.results.map((result, idx) => (
+    <div className="ceekrs-search-results">
+      {results.map((result, idx) => (
         <div
           key={idx}
           onClick={(e) => {
-            // register the time and let the player update
-            console.log({ e });
+            document.querySelector("video").currentTime = result.time / 1000; // ms - seconds
+            tearDownRoot();
           }}
         >
           <p>
-            <span>{`${fancyTimeFormat(result.time / 1000)}`}</span>
+            <span id="ceekrs-timestamp">{`${fancyTimeFormat(result.time / 1000)}`}</span>
             {` - ${result.word} ${result.right.join(" ")}`}
           </p>
         </div>
@@ -63,6 +63,7 @@ function ResultsComponent(props) {
 
 ResultsComponent.propTypes = {
   results: PropTypes.array.isRequired,
+  tearDownRoot: PropTypes.func.isRequired,
 };
 
 SearchFrame.propTypes = {
