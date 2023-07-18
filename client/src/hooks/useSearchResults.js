@@ -19,5 +19,5 @@ export function useSearchResults(searchTerm) {
     loadCap();
   }, [url, loadCap]);
 
-  return search(searchTerm, captions).slice(0, 5); // [{word: string, time: number, right: string}]
+  return search(searchTerm, captions); // [{word: string, time: number, right: string}]
 }

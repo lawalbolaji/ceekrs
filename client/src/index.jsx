@@ -73,10 +73,12 @@ window.addEventListener("load", function () {
     searchBtn.append(btnImage);
     searchBtn.addEventListener("click", () => _render());
 
-    const ytRightControls = document
-      .querySelector("#container .html5-video-player")
-      .querySelector(".ytp-right-controls");
-    ytRightControls.insertBefore(searchBtn, ytRightControls.firstChild);
+    const ytRightControls = document.querySelector(".ytp-right-controls");
+    if (ytRightControls) {
+      ytRightControls.insertBefore(searchBtn, ytRightControls.firstChild);
+    } else {
+      console.error("unable to mount search control button");
+    }
   })();
 
   // eslint-disable-next-line no-unused-vars
@@ -90,9 +92,9 @@ window.addEventListener("load", function () {
 });
 
 /* 
-  TODOS:
+  TODO:
     - mount ceekrs on wide-player as well
 
-    fullscreenbtn = .ytp-fullscreen-button | key press "f"
-    midscreenbtn = .ytp-size-button | key press "t"
+    fullscreenButton = .ytp-fullscreen-button | key press "f"
+    halfScreenButton = .ytp-size-button | key press "t"
  */
