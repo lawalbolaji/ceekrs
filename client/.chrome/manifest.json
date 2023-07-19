@@ -1,0 +1,61 @@
+{
+  "manifest_version": 3,
+  "name": "Ceekrs",
+  "description": "Search for a topic, term, name of a person, phrase or any spoken word in a video and naviaget to the exact point in the video",
+  "version": "0.1.0",
+  "author": {
+    "email": "hi@ceekrs.com",
+    "name": "ceekrs inc."
+  },
+
+  "icons": {
+    "16": "action/16x16.png",
+    "32": "action/32x32.png",
+    "48": "action/48x48.png",
+    "128": "action/128x128.png"
+  },
+
+  "action": {
+    "default_icon": {
+      "16": "action/16x16.png",
+      "32": "action/32x32.png",
+      "48": "action/48x48.png",
+      "128": "action/128x128.png"
+    }
+  },
+
+  "background": {
+    "service_worker": "chrome.service.worker.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://*.youtube.com/watch*"],
+      "js": ["index.js"],
+      "css": ["styles/index.css"],
+      "run_at": "document_end"
+    }
+  ],
+
+  "permissions": ["activeTab", "scripting"],
+  "optional_permissions": [],
+  "host_permissions": [
+    "https://b3703f7e-38c3-4bf1-b6d8-ad50e77a755f.mock.pstmn.io/*"
+  ],
+
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+0",
+        "mac": "Command+Shift+0"
+      },
+      "description": "toggles search box open state"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/*"],
+      "matches": ["*://*/*"]
+    }
+  ]
+}
