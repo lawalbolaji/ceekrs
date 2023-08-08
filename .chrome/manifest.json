@@ -1,11 +1,11 @@
 {
   "manifest_version": 3,
   "name": "Ceekrs",
-  "description": "Search for a topic, term, name of a person, phrase or any spoken word in a video and naviaget to the exact point in the video",
+  "description": "Search for a topic, term, name of a person, phrase or any spoken word in a video and navigate to the exact point in the video",
   "version": "0.1.0",
   "author": {
-    "email": "hi@ceekrs.com",
-    "name": "ceekrs inc."
+    "email": "hi@lawalrasheed.com",
+    "name": "Abdulrasheed Lawal"
   },
 
   "icons": {
@@ -39,9 +39,7 @@
 
   "permissions": ["activeTab", "scripting"],
   "optional_permissions": [],
-  "host_permissions": [
-    "https://b3703f7e-38c3-4bf1-b6d8-ad50e77a755f.mock.pstmn.io/*"
-  ],
+  "host_permissions": ["https://b3703f7e-38c3-4bf1-b6d8-ad50e77a755f.mock.pstmn.io/*"],
 
   "commands": {
     "_execute_action": {

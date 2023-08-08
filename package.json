@@ -1,7 +1,10 @@
 {
-  "name": "crc",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@ceekrs/client",
+  "author": {
+    "name": "Abdulrasheed Lawal",
+    "email": "hi@lawalrasheed.com"
+  },
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "build": "npm run lint && vite build",

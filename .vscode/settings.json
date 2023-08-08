@@ -4,5 +4,8 @@
       "fileMatch": ["/manifest.json"],
       "url": "https://json.schemastore.org/chrome-manifest.json"
     }
+  ],
+  "cSpell.words": [
+    "ceekrs"
   ]
 }
