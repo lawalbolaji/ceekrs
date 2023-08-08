@@ -1,6 +1,11 @@
 # Ceekrs Client
 
-This project uses react to develop its ui components and is served as an extension to the chrome browser
+A significant amount of valuable information is publicly available in video form, unfortunately, a large proportion of this is long-form content and spans hours. Learners and innovators need a way to be able to access relevant information quickly. Ceekrs client enables flexible and robust searches within Youtube videos. 
+
+It is served as a browser extension with v0.1.0 already available in Chrome.
+
+<img width="1275" alt="Screenshot 2023-08-08 at 23 09 47" src="https://github.com/lawalbolaji/ceekrs-client/assets/22568024/40fe2f80-c222-4883-a440-4e4c3e0ce7c3">
+
 
 ## Local development setup
 
